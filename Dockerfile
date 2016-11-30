@@ -13,7 +13,7 @@ RUN curl --silent -O https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTS
 
 RUN curl --silent -L https://www.getchef.com/chef/install.sh | sh
 
-RUN yum -y install iproute less which file policycoreutils sudo openssh-server openssh-clients which curl
+RUN yum -y install iproute less which file policycoreutils sudo openssh-server openssh-clients curl
 
 RUN yum -y update; yum clean all
 
