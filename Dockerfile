@@ -2,6 +2,8 @@ FROM centos:7
 MAINTAINER "corux"
 ENV container docker
 
+RUN yum-config-manager --enable --save cr
+
 RUN curl --silent -O https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub; \
     rpm --import SALTSTACK-GPG-KEY.pub; \
     rm -f SALTSTACK-GPG-KEY.pub; \
