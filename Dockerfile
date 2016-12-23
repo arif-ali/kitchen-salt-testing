@@ -2,8 +2,6 @@ FROM centos:7
 MAINTAINER "corux"
 ENV container docker
 
-RUN yum-config-manager --enable --save cr
-
 RUN curl --silent -O https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub; \
     rpm --import SALTSTACK-GPG-KEY.pub; \
     rm -f SALTSTACK-GPG-KEY.pub; \
@@ -14,6 +12,8 @@ RUN curl --silent -O https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTS
 RUN curl --silent -L https://www.getchef.com/chef/install.sh | sh
 
 RUN yum -y install iproute less which file policycoreutils sudo openssh-server openssh-clients curl
+
+RUN yum -y install rubygem-bundler python-pip
 
 RUN yum -y update; yum clean all
 
